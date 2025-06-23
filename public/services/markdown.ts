@@ -9,12 +9,26 @@ marked.setOptions({
   breaks: true,
 })
 
+declare const MARKDOWN_ALLOW: string | undefined
 if (DOMPurify.isSupported) {
   DOMPurify.setConfig({
     USE_PROFILES: {
       html: true,
     },
     ADD_ATTR: ["target"],
+  })
+
+  let allow: RegExp[] | undefined
+  DOMPurify.addHook("uponSanitizeAttribute", (currentNode, hookEvent, _config) => {
+    if (allow === undefined && MARKDOWN_ALLOW !== undefined)
+      allow = MARKDOWN_ALLOW.split("\n")
+        .filter((s) => s)
+        .map((s) => new RegExp(s, "i"))
+
+    if (allow && hookEvent.attrName === "href") {
+      const href = currentNode.getAttribute("href")
+      if (href !== null && !href.startsWith("javascript")) hookEvent.forceKeepAttr = allow.some((r) => href.match(r))
+    }
   })
 }
 
