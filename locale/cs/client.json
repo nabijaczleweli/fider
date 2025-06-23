@@ -182,5 +182,15 @@
   "signin.message.private.title": "<0>{0}</0> je soukromý prostor, pro účast a hlasování se musíte přihlásit.",
   "signin.message.socialbutton.intro": "Přihlásit se pomocí",
   "{count, plural, one {# tag} other {# tags}}": "{count, plural, one {# tag} other {# tags}}",
-  "labels.notagsselected": "Žádné štítky nejsou vybrány"
+  "labels.notagsselected": "Žádné štítky nejsou vybrány",
+  "action.commentsfeed": "Komentáře ATOM Feed",
+  "action.postsfeed": "ATOM Feed (Všechny příspěvky)",
+  "label.addtags": "Přidat štítky...",
+  "label.searchtags": "Hledat štítky...",
+  "mysettings.notification.event.newpostcreated": "Díky! Váš příspěvek byl přidán 👍",
+  "newpost.modal.addimage": "Přidat obrázky",
+  "newpost.modal.description.placeholder": "Řekněte nám o svém nápadu. Vysvětlete ho podrobně, neváhejte, čím více informací, tím lépe.",
+  "newpost.modal.title": "Podělte se o svůj názor...",
+  "newpost.modal.title.label": "Dejte svému návrhu název",
+  "newpost.modal.title.placeholder": "Něco krátkého a výstižného, ​​shrňte to do pár slov"
 }
